@@ -76,10 +76,50 @@ with open("hobbies.txt", "r") as file:
 """
 #binary files
 # writing to a bainary files
+"""
 data = b"\x00\x01\x02\x03\x04"
 with open("binary.bin", "wb") as file:
     file.write(data)
 with open("binary.bin", "rb") as file:
     data = file.read()
     print(data)
+"""
+### Read a text file and count the numbers of lines, words and characters
+'''
+with open("test1.txt", "r") as file:
+    content = file.read()
+    print(content)   
+    print("Total words:", len(content.split()))
+    content_list = list(content)
+    for i in content_list:
+        if i == " " or i == "\t" or i == "\n":
+            content_list.remove(i)
+    print("Total characters: ", len(content_list))
+'''
+##### creating a new directory
+"""
+import os
+new_directory = "packages"
+os.mkdir(new_directory)
+print(f"Directory {new_directory} created sucessfully!")
+"""
+#### listing files and folders
+import os
+items = os.listdir(".")
+print(items)
+### joining path
+print("Current Working DIrectory:", os.getcwd())
+##### 
+path = "packages"
+if os.path.exists(path):
+    print(f"{path} exists!")
+    if os.path.isfile(path):
+        print(f"The path '{path}' is a file")
+    elif os.path.isdir(path):
+        print(f"The path '{path}' is a directory or folder!")
+    else:
+        print(f"The file path {path} neither a file nor a directory")
+else:
+    print(f"{path} doesn't exists")
     
+
