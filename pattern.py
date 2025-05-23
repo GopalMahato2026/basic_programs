@@ -343,4 +343,5 @@ for i in range(n,-1, -1):
     for j3 in range(i + 1):
         print("*", end=" ")
     print()
+###
 
